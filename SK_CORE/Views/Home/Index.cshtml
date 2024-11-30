@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    // Layout = "~/views/shared/_layout1.cshtml";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <h1>Suresh Kumar Thakur</h1>
+    <h3>Razor syntax: @DateTime.Now</h3>
+</div>
+@{
+    var name = "suresh";
+    var age = 30;
+}
+<h1>Name: @name</h1>
+<h1>Name: @age</h1>
+<p> Example of ViewData</p>
+@{
+    foreach (var item in (string[])ViewData["Data1"])
+    {
+        <p>@item</p>
+    }
+}
+<p> Example of ViewBag</p>
+@{
+    foreach (var item in ViewBag.data1)
+    {
+        <p>@item</p>
+    }
+}
+
+@* Example of Tag Helper *@
+<a asp-controller="Home" asp-action="Contact">Contact</a>
